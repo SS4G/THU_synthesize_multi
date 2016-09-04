@@ -6,7 +6,7 @@ fifo_sel_bits,
 fifo_sel_res_final
 
 );
-parameter PORT_NUM=16;
+parameter PORT_NUM=32;
 input glb_areset_n;
 input glb_clk    ;
 
@@ -33,6 +33,22 @@ parameter CHOOSE_FIFO_12=   8'd128+8'd_12;
 parameter CHOOSE_FIFO_13=   8'd128+8'd_13;
 parameter CHOOSE_FIFO_14=   8'd128+8'd_14;
 parameter CHOOSE_FIFO_15=   8'd128+8'd_15;
+parameter CHOOSE_FIFO_16=   8'd128+8'd_16;
+parameter CHOOSE_FIFO_17=   8'd128+8'd_17;
+parameter CHOOSE_FIFO_18=   8'd128+8'd_18;
+parameter CHOOSE_FIFO_19=   8'd128+8'd_19;
+parameter CHOOSE_FIFO_20=   8'd128+8'd_20;
+parameter CHOOSE_FIFO_21=   8'd128+8'd_21;
+parameter CHOOSE_FIFO_22=   8'd128+8'd_22;
+parameter CHOOSE_FIFO_23=   8'd128+8'd_23;
+parameter CHOOSE_FIFO_24=   8'd128+8'd_24;
+parameter CHOOSE_FIFO_25=   8'd128+8'd_25;
+parameter CHOOSE_FIFO_26=   8'd128+8'd_26;
+parameter CHOOSE_FIFO_27=   8'd128+8'd_27;
+parameter CHOOSE_FIFO_28=   8'd128+8'd_28;
+parameter CHOOSE_FIFO_29=   8'd128+8'd_29;
+parameter CHOOSE_FIFO_30=   8'd128+8'd_30;
+parameter CHOOSE_FIFO_31=   8'd128+8'd_31;
 
 //-------------------
 
@@ -103,6 +119,70 @@ begin
         else if(fifo_sel_bits[15])
         begin
             fifo_sel_res=CHOOSE_FIFO_15;
+        end
+        else if(fifo_sel_bits[16])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_16;
+        end
+        else if(fifo_sel_bits[17])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_17;
+        end
+        else if(fifo_sel_bits[18])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_18;
+        end
+        else if(fifo_sel_bits[19])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_19;
+        end
+        else if(fifo_sel_bits[20])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_20;
+        end
+        else if(fifo_sel_bits[21])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_21;
+        end
+        else if(fifo_sel_bits[22])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_22;
+        end
+        else if(fifo_sel_bits[23])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_23;
+        end
+        else if(fifo_sel_bits[24])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_24;
+        end
+        else if(fifo_sel_bits[25])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_25;
+        end
+        else if(fifo_sel_bits[26])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_26;
+        end
+        else if(fifo_sel_bits[27])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_27;
+        end
+        else if(fifo_sel_bits[28])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_28;
+        end
+        else if(fifo_sel_bits[29])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_29;
+        end
+        else if(fifo_sel_bits[30])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_30;
+        end
+        else if(fifo_sel_bits[31])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_31;
         end
 
 //-------------------

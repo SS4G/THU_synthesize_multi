@@ -33,12 +33,28 @@ fifo_11_space_used ,
 fifo_12_space_used ,
 fifo_13_space_used ,
 fifo_14_space_used ,
-fifo_15_space_used  
+fifo_15_space_used ,
+fifo_16_space_used ,
+fifo_17_space_used ,
+fifo_18_space_used ,
+fifo_19_space_used ,
+fifo_20_space_used ,
+fifo_21_space_used ,
+fifo_22_space_used ,
+fifo_23_space_used ,
+fifo_24_space_used ,
+fifo_25_space_used ,
+fifo_26_space_used ,
+fifo_27_space_used ,
+fifo_28_space_used ,
+fifo_29_space_used ,
+fifo_30_space_used ,
+fifo_31_space_used  
 
 //-------------------
 //*replace_last*,*with* *
 );
-parameter PORT_NUM=16;
+parameter PORT_NUM=32;
 input glb_clk     ;
 input glb_areset_n;
 
@@ -74,6 +90,22 @@ input   [31:0]          fifo_12_space_used ;
 input   [31:0]          fifo_13_space_used ;
 input   [31:0]          fifo_14_space_used ;
 input   [31:0]          fifo_15_space_used ;
+input   [31:0]          fifo_16_space_used ;
+input   [31:0]          fifo_17_space_used ;
+input   [31:0]          fifo_18_space_used ;
+input   [31:0]          fifo_19_space_used ;
+input   [31:0]          fifo_20_space_used ;
+input   [31:0]          fifo_21_space_used ;
+input   [31:0]          fifo_22_space_used ;
+input   [31:0]          fifo_23_space_used ;
+input   [31:0]          fifo_24_space_used ;
+input   [31:0]          fifo_25_space_used ;
+input   [31:0]          fifo_26_space_used ;
+input   [31:0]          fifo_27_space_used ;
+input   [31:0]          fifo_28_space_used ;
+input   [31:0]          fifo_29_space_used ;
+input   [31:0]          fifo_30_space_used ;
+input   [31:0]          fifo_31_space_used ;
 
 //-------------------
 
@@ -96,6 +128,22 @@ parameter DEST_MAC_12= 48'd_12;
 parameter DEST_MAC_13= 48'd_13;
 parameter DEST_MAC_14= 48'd_14;
 parameter DEST_MAC_15= 48'd_15;
+parameter DEST_MAC_16= 48'd_16;
+parameter DEST_MAC_17= 48'd_17;
+parameter DEST_MAC_18= 48'd_18;
+parameter DEST_MAC_19= 48'd_19;
+parameter DEST_MAC_20= 48'd_20;
+parameter DEST_MAC_21= 48'd_21;
+parameter DEST_MAC_22= 48'd_22;
+parameter DEST_MAC_23= 48'd_23;
+parameter DEST_MAC_24= 48'd_24;
+parameter DEST_MAC_25= 48'd_25;
+parameter DEST_MAC_26= 48'd_26;
+parameter DEST_MAC_27= 48'd_27;
+parameter DEST_MAC_28= 48'd_28;
+parameter DEST_MAC_29= 48'd_29;
+parameter DEST_MAC_30= 48'd_30;
+parameter DEST_MAC_31= 48'd_31;
 
 //-------------------
 
@@ -115,6 +163,22 @@ parameter PORT_LABLE_12   =8'd1+8'd_12 ;
 parameter PORT_LABLE_13   =8'd1+8'd_13 ;
 parameter PORT_LABLE_14   =8'd1+8'd_14 ;
 parameter PORT_LABLE_15   =8'd1+8'd_15 ;
+parameter PORT_LABLE_16   =8'd1+8'd_16 ;
+parameter PORT_LABLE_17   =8'd1+8'd_17 ;
+parameter PORT_LABLE_18   =8'd1+8'd_18 ;
+parameter PORT_LABLE_19   =8'd1+8'd_19 ;
+parameter PORT_LABLE_20   =8'd1+8'd_20 ;
+parameter PORT_LABLE_21   =8'd1+8'd_21 ;
+parameter PORT_LABLE_22   =8'd1+8'd_22 ;
+parameter PORT_LABLE_23   =8'd1+8'd_23 ;
+parameter PORT_LABLE_24   =8'd1+8'd_24 ;
+parameter PORT_LABLE_25   =8'd1+8'd_25 ;
+parameter PORT_LABLE_26   =8'd1+8'd_26 ;
+parameter PORT_LABLE_27   =8'd1+8'd_27 ;
+parameter PORT_LABLE_28   =8'd1+8'd_28 ;
+parameter PORT_LABLE_29   =8'd1+8'd_29 ;
+parameter PORT_LABLE_30   =8'd1+8'd_30 ;
+parameter PORT_LABLE_31   =8'd1+8'd_31 ;
 
 //-------------------
 
@@ -212,6 +276,22 @@ begin
     PORT_LABLE_13   :begin fd_bus_sel_bits=(32'h1<<13); new_dst_mac=DEST_MAC_13; end
     PORT_LABLE_14   :begin fd_bus_sel_bits=(32'h1<<14); new_dst_mac=DEST_MAC_14; end
     PORT_LABLE_15   :begin fd_bus_sel_bits=(32'h1<<15); new_dst_mac=DEST_MAC_15; end
+    PORT_LABLE_16   :begin fd_bus_sel_bits=(32'h1<<16); new_dst_mac=DEST_MAC_16; end
+    PORT_LABLE_17   :begin fd_bus_sel_bits=(32'h1<<17); new_dst_mac=DEST_MAC_17; end
+    PORT_LABLE_18   :begin fd_bus_sel_bits=(32'h1<<18); new_dst_mac=DEST_MAC_18; end
+    PORT_LABLE_19   :begin fd_bus_sel_bits=(32'h1<<19); new_dst_mac=DEST_MAC_19; end
+    PORT_LABLE_20   :begin fd_bus_sel_bits=(32'h1<<20); new_dst_mac=DEST_MAC_20; end
+    PORT_LABLE_21   :begin fd_bus_sel_bits=(32'h1<<21); new_dst_mac=DEST_MAC_21; end
+    PORT_LABLE_22   :begin fd_bus_sel_bits=(32'h1<<22); new_dst_mac=DEST_MAC_22; end
+    PORT_LABLE_23   :begin fd_bus_sel_bits=(32'h1<<23); new_dst_mac=DEST_MAC_23; end
+    PORT_LABLE_24   :begin fd_bus_sel_bits=(32'h1<<24); new_dst_mac=DEST_MAC_24; end
+    PORT_LABLE_25   :begin fd_bus_sel_bits=(32'h1<<25); new_dst_mac=DEST_MAC_25; end
+    PORT_LABLE_26   :begin fd_bus_sel_bits=(32'h1<<26); new_dst_mac=DEST_MAC_26; end
+    PORT_LABLE_27   :begin fd_bus_sel_bits=(32'h1<<27); new_dst_mac=DEST_MAC_27; end
+    PORT_LABLE_28   :begin fd_bus_sel_bits=(32'h1<<28); new_dst_mac=DEST_MAC_28; end
+    PORT_LABLE_29   :begin fd_bus_sel_bits=(32'h1<<29); new_dst_mac=DEST_MAC_29; end
+    PORT_LABLE_30   :begin fd_bus_sel_bits=(32'h1<<30); new_dst_mac=DEST_MAC_30; end
+    PORT_LABLE_31   :begin fd_bus_sel_bits=(32'h1<<31); new_dst_mac=DEST_MAC_31; end
 
 //-------------------
     
@@ -240,6 +320,22 @@ always @(dst_lable_r,
         fifo_13_space_used,    
         fifo_14_space_used,    
         fifo_15_space_used,    
+        fifo_16_space_used,    
+        fifo_17_space_used,    
+        fifo_18_space_used,    
+        fifo_19_space_used,    
+        fifo_20_space_used,    
+        fifo_21_space_used,    
+        fifo_22_space_used,    
+        fifo_23_space_used,    
+        fifo_24_space_used,    
+        fifo_25_space_used,    
+        fifo_26_space_used,    
+        fifo_27_space_used,    
+        fifo_28_space_used,    
+        fifo_29_space_used,    
+        fifo_30_space_used,    
+        fifo_31_space_used,    
 
 //-------------------
         ECN_r)
@@ -261,6 +357,22 @@ begin
     PORT_LABLE_13   :ECN_res_r=fifo_13_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
     PORT_LABLE_14   :ECN_res_r=fifo_14_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
     PORT_LABLE_15   :ECN_res_r=fifo_15_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_16   :ECN_res_r=fifo_16_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_17   :ECN_res_r=fifo_17_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_18   :ECN_res_r=fifo_18_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_19   :ECN_res_r=fifo_19_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_20   :ECN_res_r=fifo_20_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_21   :ECN_res_r=fifo_21_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_22   :ECN_res_r=fifo_22_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_23   :ECN_res_r=fifo_23_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_24   :ECN_res_r=fifo_24_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_25   :ECN_res_r=fifo_25_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_26   :ECN_res_r=fifo_26_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_27   :ECN_res_r=fifo_27_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_28   :ECN_res_r=fifo_28_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_29   :ECN_res_r=fifo_29_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_30   :ECN_res_r=fifo_30_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_31   :ECN_res_r=fifo_31_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
 
 //-------------------
     

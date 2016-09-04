@@ -65,6 +65,70 @@ axis_in_15_tvalid ,
 axis_in_15_tdata  ,
 axis_in_15_tkeep  ,
 axis_in_15_tlast  ,
+axis_in_16_tvalid ,
+axis_in_16_tdata  ,
+axis_in_16_tkeep  ,
+axis_in_16_tlast  ,
+axis_in_17_tvalid ,
+axis_in_17_tdata  ,
+axis_in_17_tkeep  ,
+axis_in_17_tlast  ,
+axis_in_18_tvalid ,
+axis_in_18_tdata  ,
+axis_in_18_tkeep  ,
+axis_in_18_tlast  ,
+axis_in_19_tvalid ,
+axis_in_19_tdata  ,
+axis_in_19_tkeep  ,
+axis_in_19_tlast  ,
+axis_in_20_tvalid ,
+axis_in_20_tdata  ,
+axis_in_20_tkeep  ,
+axis_in_20_tlast  ,
+axis_in_21_tvalid ,
+axis_in_21_tdata  ,
+axis_in_21_tkeep  ,
+axis_in_21_tlast  ,
+axis_in_22_tvalid ,
+axis_in_22_tdata  ,
+axis_in_22_tkeep  ,
+axis_in_22_tlast  ,
+axis_in_23_tvalid ,
+axis_in_23_tdata  ,
+axis_in_23_tkeep  ,
+axis_in_23_tlast  ,
+axis_in_24_tvalid ,
+axis_in_24_tdata  ,
+axis_in_24_tkeep  ,
+axis_in_24_tlast  ,
+axis_in_25_tvalid ,
+axis_in_25_tdata  ,
+axis_in_25_tkeep  ,
+axis_in_25_tlast  ,
+axis_in_26_tvalid ,
+axis_in_26_tdata  ,
+axis_in_26_tkeep  ,
+axis_in_26_tlast  ,
+axis_in_27_tvalid ,
+axis_in_27_tdata  ,
+axis_in_27_tkeep  ,
+axis_in_27_tlast  ,
+axis_in_28_tvalid ,
+axis_in_28_tdata  ,
+axis_in_28_tkeep  ,
+axis_in_28_tlast  ,
+axis_in_29_tvalid ,
+axis_in_29_tdata  ,
+axis_in_29_tkeep  ,
+axis_in_29_tlast  ,
+axis_in_30_tvalid ,
+axis_in_30_tdata  ,
+axis_in_30_tkeep  ,
+axis_in_30_tlast  ,
+axis_in_31_tvalid ,
+axis_in_31_tdata  ,
+axis_in_31_tkeep  ,
+axis_in_31_tlast  ,
 
 //-------------------
 
@@ -140,6 +204,70 @@ input           axis_in_15_tvalid ;
 input  [31:0]   axis_in_15_tdata  ;
 input  [3:0]    axis_in_15_tkeep  ;
 input           axis_in_15_tlast  ;
+input           axis_in_16_tvalid ;
+input  [31:0]   axis_in_16_tdata  ;
+input  [3:0]    axis_in_16_tkeep  ;
+input           axis_in_16_tlast  ;
+input           axis_in_17_tvalid ;
+input  [31:0]   axis_in_17_tdata  ;
+input  [3:0]    axis_in_17_tkeep  ;
+input           axis_in_17_tlast  ;
+input           axis_in_18_tvalid ;
+input  [31:0]   axis_in_18_tdata  ;
+input  [3:0]    axis_in_18_tkeep  ;
+input           axis_in_18_tlast  ;
+input           axis_in_19_tvalid ;
+input  [31:0]   axis_in_19_tdata  ;
+input  [3:0]    axis_in_19_tkeep  ;
+input           axis_in_19_tlast  ;
+input           axis_in_20_tvalid ;
+input  [31:0]   axis_in_20_tdata  ;
+input  [3:0]    axis_in_20_tkeep  ;
+input           axis_in_20_tlast  ;
+input           axis_in_21_tvalid ;
+input  [31:0]   axis_in_21_tdata  ;
+input  [3:0]    axis_in_21_tkeep  ;
+input           axis_in_21_tlast  ;
+input           axis_in_22_tvalid ;
+input  [31:0]   axis_in_22_tdata  ;
+input  [3:0]    axis_in_22_tkeep  ;
+input           axis_in_22_tlast  ;
+input           axis_in_23_tvalid ;
+input  [31:0]   axis_in_23_tdata  ;
+input  [3:0]    axis_in_23_tkeep  ;
+input           axis_in_23_tlast  ;
+input           axis_in_24_tvalid ;
+input  [31:0]   axis_in_24_tdata  ;
+input  [3:0]    axis_in_24_tkeep  ;
+input           axis_in_24_tlast  ;
+input           axis_in_25_tvalid ;
+input  [31:0]   axis_in_25_tdata  ;
+input  [3:0]    axis_in_25_tkeep  ;
+input           axis_in_25_tlast  ;
+input           axis_in_26_tvalid ;
+input  [31:0]   axis_in_26_tdata  ;
+input  [3:0]    axis_in_26_tkeep  ;
+input           axis_in_26_tlast  ;
+input           axis_in_27_tvalid ;
+input  [31:0]   axis_in_27_tdata  ;
+input  [3:0]    axis_in_27_tkeep  ;
+input           axis_in_27_tlast  ;
+input           axis_in_28_tvalid ;
+input  [31:0]   axis_in_28_tdata  ;
+input  [3:0]    axis_in_28_tkeep  ;
+input           axis_in_28_tlast  ;
+input           axis_in_29_tvalid ;
+input  [31:0]   axis_in_29_tdata  ;
+input  [3:0]    axis_in_29_tkeep  ;
+input           axis_in_29_tlast  ;
+input           axis_in_30_tvalid ;
+input  [31:0]   axis_in_30_tdata  ;
+input  [3:0]    axis_in_30_tkeep  ;
+input           axis_in_30_tlast  ;
+input           axis_in_31_tvalid ;
+input  [31:0]   axis_in_31_tdata  ;
+input  [3:0]    axis_in_31_tkeep  ;
+input           axis_in_31_tlast  ;
 
 //-------------------
 
@@ -165,6 +293,22 @@ parameter CHOOSE_FIFO_12   =8'd128+8'd_12;
 parameter CHOOSE_FIFO_13   =8'd128+8'd_13;
 parameter CHOOSE_FIFO_14   =8'd128+8'd_14;
 parameter CHOOSE_FIFO_15   =8'd128+8'd_15;
+parameter CHOOSE_FIFO_16   =8'd128+8'd_16;
+parameter CHOOSE_FIFO_17   =8'd128+8'd_17;
+parameter CHOOSE_FIFO_18   =8'd128+8'd_18;
+parameter CHOOSE_FIFO_19   =8'd128+8'd_19;
+parameter CHOOSE_FIFO_20   =8'd128+8'd_20;
+parameter CHOOSE_FIFO_21   =8'd128+8'd_21;
+parameter CHOOSE_FIFO_22   =8'd128+8'd_22;
+parameter CHOOSE_FIFO_23   =8'd128+8'd_23;
+parameter CHOOSE_FIFO_24   =8'd128+8'd_24;
+parameter CHOOSE_FIFO_25   =8'd128+8'd_25;
+parameter CHOOSE_FIFO_26   =8'd128+8'd_26;
+parameter CHOOSE_FIFO_27   =8'd128+8'd_27;
+parameter CHOOSE_FIFO_28   =8'd128+8'd_28;
+parameter CHOOSE_FIFO_29   =8'd128+8'd_29;
+parameter CHOOSE_FIFO_30   =8'd128+8'd_30;
+parameter CHOOSE_FIFO_31   =8'd128+8'd_31;
 
 //-------------------
 
@@ -235,7 +379,71 @@ always @(bus_sel,
                 axis_in_15_tvalid,
                 axis_in_15_tdata,
                 axis_in_15_tkeep,
-                axis_in_15_tlast 
+                axis_in_15_tlast,
+                axis_in_16_tvalid,
+                axis_in_16_tdata,
+                axis_in_16_tkeep,
+                axis_in_16_tlast,
+                axis_in_17_tvalid,
+                axis_in_17_tdata,
+                axis_in_17_tkeep,
+                axis_in_17_tlast,
+                axis_in_18_tvalid,
+                axis_in_18_tdata,
+                axis_in_18_tkeep,
+                axis_in_18_tlast,
+                axis_in_19_tvalid,
+                axis_in_19_tdata,
+                axis_in_19_tkeep,
+                axis_in_19_tlast,
+                axis_in_20_tvalid,
+                axis_in_20_tdata,
+                axis_in_20_tkeep,
+                axis_in_20_tlast,
+                axis_in_21_tvalid,
+                axis_in_21_tdata,
+                axis_in_21_tkeep,
+                axis_in_21_tlast,
+                axis_in_22_tvalid,
+                axis_in_22_tdata,
+                axis_in_22_tkeep,
+                axis_in_22_tlast,
+                axis_in_23_tvalid,
+                axis_in_23_tdata,
+                axis_in_23_tkeep,
+                axis_in_23_tlast,
+                axis_in_24_tvalid,
+                axis_in_24_tdata,
+                axis_in_24_tkeep,
+                axis_in_24_tlast,
+                axis_in_25_tvalid,
+                axis_in_25_tdata,
+                axis_in_25_tkeep,
+                axis_in_25_tlast,
+                axis_in_26_tvalid,
+                axis_in_26_tdata,
+                axis_in_26_tkeep,
+                axis_in_26_tlast,
+                axis_in_27_tvalid,
+                axis_in_27_tdata,
+                axis_in_27_tkeep,
+                axis_in_27_tlast,
+                axis_in_28_tvalid,
+                axis_in_28_tdata,
+                axis_in_28_tkeep,
+                axis_in_28_tlast,
+                axis_in_29_tvalid,
+                axis_in_29_tdata,
+                axis_in_29_tkeep,
+                axis_in_29_tlast,
+                axis_in_30_tvalid,
+                axis_in_30_tdata,
+                axis_in_30_tkeep,
+                axis_in_30_tlast,
+                axis_in_31_tvalid,
+                axis_in_31_tdata,
+                axis_in_31_tkeep,
+                axis_in_31_tlast 
 
 //-------------------
                 //*replace_last*,*with* *
@@ -337,6 +545,102 @@ begin
                    axis_out_tkeep =axis_in_15_tkeep;
                    axis_out_tlast =axis_in_15_tlast;
                    axis_out_tdata =axis_in_15_tdata;
+                   end
+            CHOOSE_FIFO_16:begin
+                   axis_out_tvalid=axis_in_16_tvalid;
+                   axis_out_tkeep =axis_in_16_tkeep;
+                   axis_out_tlast =axis_in_16_tlast;
+                   axis_out_tdata =axis_in_16_tdata;
+                   end
+            CHOOSE_FIFO_17:begin
+                   axis_out_tvalid=axis_in_17_tvalid;
+                   axis_out_tkeep =axis_in_17_tkeep;
+                   axis_out_tlast =axis_in_17_tlast;
+                   axis_out_tdata =axis_in_17_tdata;
+                   end
+            CHOOSE_FIFO_18:begin
+                   axis_out_tvalid=axis_in_18_tvalid;
+                   axis_out_tkeep =axis_in_18_tkeep;
+                   axis_out_tlast =axis_in_18_tlast;
+                   axis_out_tdata =axis_in_18_tdata;
+                   end
+            CHOOSE_FIFO_19:begin
+                   axis_out_tvalid=axis_in_19_tvalid;
+                   axis_out_tkeep =axis_in_19_tkeep;
+                   axis_out_tlast =axis_in_19_tlast;
+                   axis_out_tdata =axis_in_19_tdata;
+                   end
+            CHOOSE_FIFO_20:begin
+                   axis_out_tvalid=axis_in_20_tvalid;
+                   axis_out_tkeep =axis_in_20_tkeep;
+                   axis_out_tlast =axis_in_20_tlast;
+                   axis_out_tdata =axis_in_20_tdata;
+                   end
+            CHOOSE_FIFO_21:begin
+                   axis_out_tvalid=axis_in_21_tvalid;
+                   axis_out_tkeep =axis_in_21_tkeep;
+                   axis_out_tlast =axis_in_21_tlast;
+                   axis_out_tdata =axis_in_21_tdata;
+                   end
+            CHOOSE_FIFO_22:begin
+                   axis_out_tvalid=axis_in_22_tvalid;
+                   axis_out_tkeep =axis_in_22_tkeep;
+                   axis_out_tlast =axis_in_22_tlast;
+                   axis_out_tdata =axis_in_22_tdata;
+                   end
+            CHOOSE_FIFO_23:begin
+                   axis_out_tvalid=axis_in_23_tvalid;
+                   axis_out_tkeep =axis_in_23_tkeep;
+                   axis_out_tlast =axis_in_23_tlast;
+                   axis_out_tdata =axis_in_23_tdata;
+                   end
+            CHOOSE_FIFO_24:begin
+                   axis_out_tvalid=axis_in_24_tvalid;
+                   axis_out_tkeep =axis_in_24_tkeep;
+                   axis_out_tlast =axis_in_24_tlast;
+                   axis_out_tdata =axis_in_24_tdata;
+                   end
+            CHOOSE_FIFO_25:begin
+                   axis_out_tvalid=axis_in_25_tvalid;
+                   axis_out_tkeep =axis_in_25_tkeep;
+                   axis_out_tlast =axis_in_25_tlast;
+                   axis_out_tdata =axis_in_25_tdata;
+                   end
+            CHOOSE_FIFO_26:begin
+                   axis_out_tvalid=axis_in_26_tvalid;
+                   axis_out_tkeep =axis_in_26_tkeep;
+                   axis_out_tlast =axis_in_26_tlast;
+                   axis_out_tdata =axis_in_26_tdata;
+                   end
+            CHOOSE_FIFO_27:begin
+                   axis_out_tvalid=axis_in_27_tvalid;
+                   axis_out_tkeep =axis_in_27_tkeep;
+                   axis_out_tlast =axis_in_27_tlast;
+                   axis_out_tdata =axis_in_27_tdata;
+                   end
+            CHOOSE_FIFO_28:begin
+                   axis_out_tvalid=axis_in_28_tvalid;
+                   axis_out_tkeep =axis_in_28_tkeep;
+                   axis_out_tlast =axis_in_28_tlast;
+                   axis_out_tdata =axis_in_28_tdata;
+                   end
+            CHOOSE_FIFO_29:begin
+                   axis_out_tvalid=axis_in_29_tvalid;
+                   axis_out_tkeep =axis_in_29_tkeep;
+                   axis_out_tlast =axis_in_29_tlast;
+                   axis_out_tdata =axis_in_29_tdata;
+                   end
+            CHOOSE_FIFO_30:begin
+                   axis_out_tvalid=axis_in_30_tvalid;
+                   axis_out_tkeep =axis_in_30_tkeep;
+                   axis_out_tlast =axis_in_30_tlast;
+                   axis_out_tdata =axis_in_30_tdata;
+                   end
+            CHOOSE_FIFO_31:begin
+                   axis_out_tvalid=axis_in_31_tvalid;
+                   axis_out_tkeep =axis_in_31_tkeep;
+                   axis_out_tlast =axis_in_31_tlast;
+                   axis_out_tdata =axis_in_31_tdata;
                    end
 
 //-------------------
