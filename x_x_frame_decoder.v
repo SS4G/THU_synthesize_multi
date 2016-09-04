@@ -27,12 +27,14 @@ fifo_5_space_used ,
 fifo_6_space_used ,
 fifo_7_space_used ,
 fifo_8_space_used ,
-fifo_9_space_used  
+fifo_9_space_used ,
+fifo_10_space_used ,
+fifo_11_space_used  
 
 //-------------------
 //*replace_last*,*with* *
 );
-parameter PORT_NUM=10;
+parameter PORT_NUM=12;
 input glb_clk     ;
 input glb_areset_n;
 
@@ -62,6 +64,8 @@ input   [31:0]          fifo_6_space_used ;
 input   [31:0]          fifo_7_space_used ;
 input   [31:0]          fifo_8_space_used ;
 input   [31:0]          fifo_9_space_used ;
+input   [31:0]          fifo_10_space_used ;
+input   [31:0]          fifo_11_space_used ;
 
 //-------------------
 
@@ -78,6 +82,8 @@ parameter DEST_MAC_6= 48'd_6;
 parameter DEST_MAC_7= 48'd_7;
 parameter DEST_MAC_8= 48'd_8;
 parameter DEST_MAC_9= 48'd_9;
+parameter DEST_MAC_10= 48'd_10;
+parameter DEST_MAC_11= 48'd_11;
 
 //-------------------
 
@@ -91,6 +97,8 @@ parameter PORT_LABLE_6   =8'd1+8'd_6 ;
 parameter PORT_LABLE_7   =8'd1+8'd_7 ;
 parameter PORT_LABLE_8   =8'd1+8'd_8 ;
 parameter PORT_LABLE_9   =8'd1+8'd_9 ;
+parameter PORT_LABLE_10   =8'd1+8'd_10 ;
+parameter PORT_LABLE_11   =8'd1+8'd_11 ;
 
 //-------------------
 
@@ -182,6 +190,8 @@ begin
     PORT_LABLE_7   :begin fd_bus_sel_bits=(32'h1<<7); new_dst_mac=DEST_MAC_7; end
     PORT_LABLE_8   :begin fd_bus_sel_bits=(32'h1<<8); new_dst_mac=DEST_MAC_8; end
     PORT_LABLE_9   :begin fd_bus_sel_bits=(32'h1<<9); new_dst_mac=DEST_MAC_9; end
+    PORT_LABLE_10   :begin fd_bus_sel_bits=(32'h1<<10); new_dst_mac=DEST_MAC_10; end
+    PORT_LABLE_11   :begin fd_bus_sel_bits=(32'h1<<11); new_dst_mac=DEST_MAC_11; end
 
 //-------------------
     
@@ -204,6 +214,8 @@ always @(dst_lable_r,
         fifo_7_space_used,    
         fifo_8_space_used,    
         fifo_9_space_used,    
+        fifo_10_space_used,    
+        fifo_11_space_used,    
 
 //-------------------
         ECN_r)
@@ -219,6 +231,8 @@ begin
     PORT_LABLE_7   :ECN_res_r=fifo_7_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
     PORT_LABLE_8   :ECN_res_r=fifo_8_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
     PORT_LABLE_9   :ECN_res_r=fifo_9_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_10   :ECN_res_r=fifo_10_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
+    PORT_LABLE_11   :ECN_res_r=fifo_11_space_used >FIFO_ALERT_THERSOLD?8'h1:ECN_r;
 
 //-------------------
     
