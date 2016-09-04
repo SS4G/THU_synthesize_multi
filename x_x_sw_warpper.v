@@ -63,6 +63,16 @@ rxd_s_axis_11_tready,
 rxd_s_axis_11_tdata ,
 rxd_s_axis_11_tkeep ,
 rxd_s_axis_11_tlast ,
+rxd_s_axis_12_tvalid,
+rxd_s_axis_12_tready,
+rxd_s_axis_12_tdata ,
+rxd_s_axis_12_tkeep ,
+rxd_s_axis_12_tlast ,
+rxd_s_axis_13_tvalid,
+rxd_s_axis_13_tready,
+rxd_s_axis_13_tdata ,
+rxd_s_axis_13_tkeep ,
+rxd_s_axis_13_tlast ,
 
 //-------------------
 
@@ -128,6 +138,16 @@ txd_m_axis_11_tready,
 txd_m_axis_11_tdata ,
 txd_m_axis_11_tkeep ,
 txd_m_axis_11_tlast ,
+txd_m_axis_12_tvalid,
+txd_m_axis_12_tready,
+txd_m_axis_12_tdata ,
+txd_m_axis_12_tkeep ,
+txd_m_axis_12_tlast ,
+txd_m_axis_13_tvalid,
+txd_m_axis_13_tready,
+txd_m_axis_13_tdata ,
+txd_m_axis_13_tkeep ,
+txd_m_axis_13_tlast ,
 
 //-------------------
 
@@ -143,12 +163,14 @@ fifo_7_space_used ,
 fifo_8_space_used ,
 fifo_9_space_used ,
 fifo_10_space_used ,
-fifo_11_space_used  
+fifo_11_space_used ,
+fifo_12_space_used ,
+fifo_13_space_used  
 
 //-------------------
 //*replace_last*,*with* *
 );
-parameter PORT_NUM=12;
+parameter PORT_NUM=14;
 
 input           glb_clk     ;
 input           glb_areset_n;
@@ -213,6 +235,16 @@ output          rxd_s_axis_11_tready;
 input   [31:0]  rxd_s_axis_11_tdata ;
 input   [3:0]   rxd_s_axis_11_tkeep ;
 input           rxd_s_axis_11_tlast ;
+input           rxd_s_axis_12_tvalid;
+output          rxd_s_axis_12_tready;
+input   [31:0]  rxd_s_axis_12_tdata ;
+input   [3:0]   rxd_s_axis_12_tkeep ;
+input           rxd_s_axis_12_tlast ;
+input           rxd_s_axis_13_tvalid;
+output          rxd_s_axis_13_tready;
+input   [31:0]  rxd_s_axis_13_tdata ;
+input   [3:0]   rxd_s_axis_13_tkeep ;
+input           rxd_s_axis_13_tlast ;
 
 //-------------------
 
@@ -276,6 +308,16 @@ input           txd_m_axis_11_tready;
 output  [31:0]  txd_m_axis_11_tdata ;
 output  [3:0]   txd_m_axis_11_tkeep ;
 output          txd_m_axis_11_tlast ;
+output          txd_m_axis_12_tvalid;
+input           txd_m_axis_12_tready;
+output  [31:0]  txd_m_axis_12_tdata ;
+output  [3:0]   txd_m_axis_12_tkeep ;
+output          txd_m_axis_12_tlast ;
+output          txd_m_axis_13_tvalid;
+input           txd_m_axis_13_tready;
+output  [31:0]  txd_m_axis_13_tdata ;
+output  [3:0]   txd_m_axis_13_tkeep ;
+output          txd_m_axis_13_tlast ;
 
 //-------------------
 
@@ -291,6 +333,8 @@ input   [31:0]  fifo_8_space_used ;
 input   [31:0]  fifo_9_space_used ;
 input   [31:0]  fifo_10_space_used ;
 input   [31:0]  fifo_11_space_used ;
+input   [31:0]  fifo_12_space_used ;
+input   [31:0]  fifo_13_space_used ;
 
 //-------------------
 
@@ -354,6 +398,16 @@ wire            fd_bar_axis_11_tready;
 wire    [31:0]  fd_bar_axis_11_tdata ;
 wire    [3:0]   fd_bar_axis_11_tkeep ;
 wire            fd_bar_axis_11_tlast ;
+wire            fd_bar_axis_12_tvalid;
+wire            fd_bar_axis_12_tready;
+wire    [31:0]  fd_bar_axis_12_tdata ;
+wire    [3:0]   fd_bar_axis_12_tkeep ;
+wire            fd_bar_axis_12_tlast ;
+wire            fd_bar_axis_13_tvalid;
+wire            fd_bar_axis_13_tready;
+wire    [31:0]  fd_bar_axis_13_tdata ;
+wire    [3:0]   fd_bar_axis_13_tkeep ;
+wire            fd_bar_axis_13_tlast ;
 
 //-------------------
 
@@ -369,6 +423,8 @@ wire    [PORT_NUM-1:0]   bus_sel_from_8_fd   ;
 wire    [PORT_NUM-1:0]   bus_sel_from_9_fd   ;
 wire    [PORT_NUM-1:0]   bus_sel_from_10_fd   ;
 wire    [PORT_NUM-1:0]   bus_sel_from_11_fd   ;
+wire    [PORT_NUM-1:0]   bus_sel_from_12_fd   ;
+wire    [PORT_NUM-1:0]   bus_sel_from_13_fd   ;
 
 //-------------------
 
@@ -384,6 +440,8 @@ wire    [PORT_NUM-1:0]   bus_sel_to_8_fifo   ;
 wire    [PORT_NUM-1:0]   bus_sel_to_9_fifo   ;
 wire    [PORT_NUM-1:0]   bus_sel_to_10_fifo   ;
 wire    [PORT_NUM-1:0]   bus_sel_to_11_fifo   ;
+wire    [PORT_NUM-1:0]   bus_sel_to_12_fifo   ;
+wire    [PORT_NUM-1:0]   bus_sel_to_13_fifo   ;
 
 //-------------------
 
@@ -455,6 +513,16 @@ bus_cross_bar #(.PORT_NUM(PORT_NUM)) BCB(
 .fifo_m_axis_11_tdata  (txd_m_axis_11_tdata ),
 .fifo_m_axis_11_tkeep  (txd_m_axis_11_tkeep ),
 .fifo_m_axis_11_tlast  (txd_m_axis_11_tlast ),
+.fifo_m_axis_12_tvalid (txd_m_axis_12_tvalid),
+.fifo_m_axis_12_tready (txd_m_axis_12_tready),
+.fifo_m_axis_12_tdata  (txd_m_axis_12_tdata ),
+.fifo_m_axis_12_tkeep  (txd_m_axis_12_tkeep ),
+.fifo_m_axis_12_tlast  (txd_m_axis_12_tlast ),
+.fifo_m_axis_13_tvalid (txd_m_axis_13_tvalid),
+.fifo_m_axis_13_tready (txd_m_axis_13_tready),
+.fifo_m_axis_13_tdata  (txd_m_axis_13_tdata ),
+.fifo_m_axis_13_tkeep  (txd_m_axis_13_tkeep ),
+.fifo_m_axis_13_tlast  (txd_m_axis_13_tlast ),
 
 //-------------------
 
@@ -519,6 +587,16 @@ bus_cross_bar #(.PORT_NUM(PORT_NUM)) BCB(
 .rx_s_axis_11_tdata  (fd_bar_axis_11_tdata ),
 .rx_s_axis_11_tkeep  (fd_bar_axis_11_tkeep ),
 .rx_s_axis_11_tlast  (fd_bar_axis_11_tlast ),
+.rx_s_axis_12_tvalid (fd_bar_axis_12_tvalid),
+.rx_s_axis_12_tready (fd_bar_axis_12_tready),
+.rx_s_axis_12_tdata  (fd_bar_axis_12_tdata ),
+.rx_s_axis_12_tkeep  (fd_bar_axis_12_tkeep ),
+.rx_s_axis_12_tlast  (fd_bar_axis_12_tlast ),
+.rx_s_axis_13_tvalid (fd_bar_axis_13_tvalid),
+.rx_s_axis_13_tready (fd_bar_axis_13_tready),
+.rx_s_axis_13_tdata  (fd_bar_axis_13_tdata ),
+.rx_s_axis_13_tkeep  (fd_bar_axis_13_tkeep ),
+.rx_s_axis_13_tlast  (fd_bar_axis_13_tlast ),
 
 //-------------------
 
@@ -533,7 +611,9 @@ bus_cross_bar #(.PORT_NUM(PORT_NUM)) BCB(
 .fifo_sel_bits_8     (bus_sel_to_8_fifo),
 .fifo_sel_bits_9     (bus_sel_to_9_fifo),
 .fifo_sel_bits_10     (bus_sel_to_10_fifo),
-.fifo_sel_bits_11     (bus_sel_to_11_fifo) 
+.fifo_sel_bits_11     (bus_sel_to_11_fifo),
+.fifo_sel_bits_12     (bus_sel_to_12_fifo),
+.fifo_sel_bits_13     (bus_sel_to_13_fifo) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -568,7 +648,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_0 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -602,7 +684,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_1 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -636,7 +720,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_2 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -670,7 +756,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_3 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -704,7 +792,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_4 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -738,7 +828,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_5 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -772,7 +864,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_6 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -806,7 +900,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_7 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -840,7 +936,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_8 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -874,7 +972,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_9 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -908,7 +1008,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_10 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -942,7 +1044,81 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_11 (
 .fifo_8_space_used (fifo_8_space_used ),
 .fifo_9_space_used (fifo_9_space_used ),
 .fifo_10_space_used (fifo_10_space_used ),
-.fifo_11_space_used (fifo_11_space_used ) 
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
+
+//-------------------
+//*replace_last*,*with* *
+);
+frame_decoder #(.PORT_NUM(PORT_NUM)) FD_12 ( 
+.glb_clk     (glb_clk     ),
+.glb_areset_n(glb_areset_n),
+
+.fd_s_axis_tvalid ( rxd_s_axis_12_tvalid),
+.fd_s_axis_tready ( rxd_s_axis_12_tready),
+.fd_s_axis_tdata  ( rxd_s_axis_12_tdata ),
+.fd_s_axis_tkeep  ( rxd_s_axis_12_tkeep ),
+.fd_s_axis_tlast  ( rxd_s_axis_12_tlast ),
+//                  ()         
+.fd_m_axis_tvalid (fd_bar_axis_12_tvalid),
+.fd_m_axis_tready (fd_bar_axis_12_tready),
+.fd_m_axis_tdata  (fd_bar_axis_12_tdata ),
+.fd_m_axis_tkeep  (fd_bar_axis_12_tkeep ),
+.fd_m_axis_tlast  (fd_bar_axis_12_tlast ),
+ //                 ()
+.fd_bus_sel_bits  (bus_sel_from_12_fd),
+ //                 ()
+.fifo_0_space_used (fifo_0_space_used ),
+.fifo_1_space_used (fifo_1_space_used ),
+.fifo_2_space_used (fifo_2_space_used ),
+.fifo_3_space_used (fifo_3_space_used ),
+.fifo_4_space_used (fifo_4_space_used ),
+.fifo_5_space_used (fifo_5_space_used ),
+.fifo_6_space_used (fifo_6_space_used ),
+.fifo_7_space_used (fifo_7_space_used ),
+.fifo_8_space_used (fifo_8_space_used ),
+.fifo_9_space_used (fifo_9_space_used ),
+.fifo_10_space_used (fifo_10_space_used ),
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
+
+//-------------------
+//*replace_last*,*with* *
+);
+frame_decoder #(.PORT_NUM(PORT_NUM)) FD_13 ( 
+.glb_clk     (glb_clk     ),
+.glb_areset_n(glb_areset_n),
+
+.fd_s_axis_tvalid ( rxd_s_axis_13_tvalid),
+.fd_s_axis_tready ( rxd_s_axis_13_tready),
+.fd_s_axis_tdata  ( rxd_s_axis_13_tdata ),
+.fd_s_axis_tkeep  ( rxd_s_axis_13_tkeep ),
+.fd_s_axis_tlast  ( rxd_s_axis_13_tlast ),
+//                  ()         
+.fd_m_axis_tvalid (fd_bar_axis_13_tvalid),
+.fd_m_axis_tready (fd_bar_axis_13_tready),
+.fd_m_axis_tdata  (fd_bar_axis_13_tdata ),
+.fd_m_axis_tkeep  (fd_bar_axis_13_tkeep ),
+.fd_m_axis_tlast  (fd_bar_axis_13_tlast ),
+ //                 ()
+.fd_bus_sel_bits  (bus_sel_from_13_fd),
+ //                 ()
+.fifo_0_space_used (fifo_0_space_used ),
+.fifo_1_space_used (fifo_1_space_used ),
+.fifo_2_space_used (fifo_2_space_used ),
+.fifo_3_space_used (fifo_3_space_used ),
+.fifo_4_space_used (fifo_4_space_used ),
+.fifo_5_space_used (fifo_5_space_used ),
+.fifo_6_space_used (fifo_6_space_used ),
+.fifo_7_space_used (fifo_7_space_used ),
+.fifo_8_space_used (fifo_8_space_used ),
+.fifo_9_space_used (fifo_9_space_used ),
+.fifo_10_space_used (fifo_10_space_used ),
+.fifo_11_space_used (fifo_11_space_used ),
+.fifo_12_space_used (fifo_12_space_used ),
+.fifo_13_space_used (fifo_13_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -964,6 +1140,8 @@ bus_sel_bits_interconnect #(.PORT_NUM(PORT_NUM)) BSBIC(
 .fifo_9_bus_sel(bus_sel_to_9_fifo),
 .fifo_10_bus_sel(bus_sel_to_10_fifo),
 .fifo_11_bus_sel(bus_sel_to_11_fifo),
+.fifo_12_bus_sel(bus_sel_to_12_fifo),
+.fifo_13_bus_sel(bus_sel_to_13_fifo),
 
 //-------------------
 
@@ -979,7 +1157,9 @@ bus_sel_bits_interconnect #(.PORT_NUM(PORT_NUM)) BSBIC(
 .fd_8_bus_sel(bus_sel_from_8_fd),
 .fd_9_bus_sel(bus_sel_from_9_fd),
 .fd_10_bus_sel(bus_sel_from_10_fd),
-.fd_11_bus_sel(bus_sel_from_11_fd) 
+.fd_11_bus_sel(bus_sel_from_11_fd),
+.fd_12_bus_sel(bus_sel_from_12_fd),
+.fd_13_bus_sel(bus_sel_from_13_fd) 
 
 //-------------------
 //*replace_last*,*with* *
