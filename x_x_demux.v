@@ -9,6 +9,8 @@ axis_out_4_tready,
 axis_out_5_tready,
 axis_out_6_tready,
 axis_out_7_tready,
+axis_out_8_tready,
+axis_out_9_tready,
 
 //-------------------
 axis_in_tready
@@ -24,6 +26,8 @@ output reg axis_out_4_tready;
 output reg axis_out_5_tready;
 output reg axis_out_6_tready;
 output reg axis_out_7_tready;
+output reg axis_out_8_tready;
+output reg axis_out_9_tready;
 
 //-------------------
 
@@ -37,6 +41,8 @@ parameter CHOOSE_FIFO_4   =8'd128+8'd_4;
 parameter CHOOSE_FIFO_5   =8'd128+8'd_5;
 parameter CHOOSE_FIFO_6   =8'd128+8'd_6;
 parameter CHOOSE_FIFO_7   =8'd128+8'd_7;
+parameter CHOOSE_FIFO_8   =8'd128+8'd_8;
+parameter CHOOSE_FIFO_9   =8'd128+8'd_9;
 
 //-------------------
 parameter NON_FIFO_CHOOSE=8'd0; 
@@ -54,6 +60,8 @@ begin
                     axis_out_5_tready=0;
                     axis_out_6_tready=0;
                     axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
 
 //-------------------
                     end
@@ -66,6 +74,8 @@ begin
                     axis_out_5_tready=0;
                     axis_out_6_tready=0;
                     axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
 
 //-------------------
                     end
@@ -78,6 +88,8 @@ begin
                     axis_out_5_tready=0;
                     axis_out_6_tready=0;
                     axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
 
 //-------------------
                     end
@@ -90,6 +102,8 @@ begin
                     axis_out_5_tready=0;
                     axis_out_6_tready=0;
                     axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
 
 //-------------------
                     end
@@ -102,6 +116,8 @@ begin
                     axis_out_5_tready=0;
                     axis_out_6_tready=0;
                     axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
 
 //-------------------
                     end
@@ -114,6 +130,8 @@ begin
                     axis_out_5_tready=axis_in_tready;
                     axis_out_6_tready=0;
                     axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
 
 //-------------------
                     end
@@ -126,6 +144,8 @@ begin
                     axis_out_5_tready=0;
                     axis_out_6_tready=axis_in_tready;
                     axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
 
 //-------------------
                     end
@@ -138,6 +158,36 @@ begin
                     axis_out_5_tready=0;
                     axis_out_6_tready=0;
                     axis_out_7_tready=axis_in_tready;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
+
+//-------------------
+                    end
+            CHOOSE_FIFO_8:begin
+                    axis_out_0_tready=0;
+                    axis_out_1_tready=0;
+                    axis_out_2_tready=0;
+                    axis_out_3_tready=0;
+                    axis_out_4_tready=0;
+                    axis_out_5_tready=0;
+                    axis_out_6_tready=0;
+                    axis_out_7_tready=0;
+                    axis_out_8_tready=axis_in_tready;
+                    axis_out_9_tready=0;
+
+//-------------------
+                    end
+            CHOOSE_FIFO_9:begin
+                    axis_out_0_tready=0;
+                    axis_out_1_tready=0;
+                    axis_out_2_tready=0;
+                    axis_out_3_tready=0;
+                    axis_out_4_tready=0;
+                    axis_out_5_tready=0;
+                    axis_out_6_tready=0;
+                    axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=axis_in_tready;
 
 //-------------------
                     end
@@ -152,6 +202,8 @@ begin
                     axis_out_5_tready=0;
                     axis_out_6_tready=0;
                     axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
 
 //-------------------
                     end
