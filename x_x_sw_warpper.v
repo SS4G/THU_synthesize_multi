@@ -13,6 +13,16 @@ rxd_s_axis_1_tready,
 rxd_s_axis_1_tdata ,
 rxd_s_axis_1_tkeep ,
 rxd_s_axis_1_tlast ,
+rxd_s_axis_2_tvalid,
+rxd_s_axis_2_tready,
+rxd_s_axis_2_tdata ,
+rxd_s_axis_2_tkeep ,
+rxd_s_axis_2_tlast ,
+rxd_s_axis_3_tvalid,
+rxd_s_axis_3_tready,
+rxd_s_axis_3_tdata ,
+rxd_s_axis_3_tkeep ,
+rxd_s_axis_3_tlast ,
 
 //-------------------
 
@@ -28,17 +38,29 @@ txd_m_axis_1_tready,
 txd_m_axis_1_tdata ,
 txd_m_axis_1_tkeep ,
 txd_m_axis_1_tlast ,
+txd_m_axis_2_tvalid,
+txd_m_axis_2_tready,
+txd_m_axis_2_tdata ,
+txd_m_axis_2_tkeep ,
+txd_m_axis_2_tlast ,
+txd_m_axis_3_tvalid,
+txd_m_axis_3_tready,
+txd_m_axis_3_tdata ,
+txd_m_axis_3_tkeep ,
+txd_m_axis_3_tlast ,
 
 //-------------------
 
 //-----
 fifo_0_space_used ,
-fifo_1_space_used  
+fifo_1_space_used ,
+fifo_2_space_used ,
+fifo_3_space_used  
 
 //-------------------
 //*replace_last*,*with* *
 );
-parameter PORT_NUM=2;
+parameter PORT_NUM=4;
 
 input           glb_clk     ;
 input           glb_areset_n;
@@ -53,6 +75,16 @@ output          rxd_s_axis_1_tready;
 input   [31:0]  rxd_s_axis_1_tdata ;
 input   [3:0]   rxd_s_axis_1_tkeep ;
 input           rxd_s_axis_1_tlast ;
+input           rxd_s_axis_2_tvalid;
+output          rxd_s_axis_2_tready;
+input   [31:0]  rxd_s_axis_2_tdata ;
+input   [3:0]   rxd_s_axis_2_tkeep ;
+input           rxd_s_axis_2_tlast ;
+input           rxd_s_axis_3_tvalid;
+output          rxd_s_axis_3_tready;
+input   [31:0]  rxd_s_axis_3_tdata ;
+input   [3:0]   rxd_s_axis_3_tkeep ;
+input           rxd_s_axis_3_tlast ;
 
 //-------------------
 
@@ -66,11 +98,23 @@ input           txd_m_axis_1_tready;
 output  [31:0]  txd_m_axis_1_tdata ;
 output  [3:0]   txd_m_axis_1_tkeep ;
 output          txd_m_axis_1_tlast ;
+output          txd_m_axis_2_tvalid;
+input           txd_m_axis_2_tready;
+output  [31:0]  txd_m_axis_2_tdata ;
+output  [3:0]   txd_m_axis_2_tkeep ;
+output          txd_m_axis_2_tlast ;
+output          txd_m_axis_3_tvalid;
+input           txd_m_axis_3_tready;
+output  [31:0]  txd_m_axis_3_tdata ;
+output  [3:0]   txd_m_axis_3_tkeep ;
+output          txd_m_axis_3_tlast ;
 
 //-------------------
 
 input   [31:0]  fifo_0_space_used ;
 input   [31:0]  fifo_1_space_used ;
+input   [31:0]  fifo_2_space_used ;
+input   [31:0]  fifo_3_space_used ;
 
 //-------------------
 
@@ -84,16 +128,30 @@ wire            fd_bar_axis_1_tready;
 wire    [31:0]  fd_bar_axis_1_tdata ;
 wire    [3:0]   fd_bar_axis_1_tkeep ;
 wire            fd_bar_axis_1_tlast ;
+wire            fd_bar_axis_2_tvalid;
+wire            fd_bar_axis_2_tready;
+wire    [31:0]  fd_bar_axis_2_tdata ;
+wire    [3:0]   fd_bar_axis_2_tkeep ;
+wire            fd_bar_axis_2_tlast ;
+wire            fd_bar_axis_3_tvalid;
+wire            fd_bar_axis_3_tready;
+wire    [31:0]  fd_bar_axis_3_tdata ;
+wire    [3:0]   fd_bar_axis_3_tkeep ;
+wire            fd_bar_axis_3_tlast ;
 
 //-------------------
 
 wire    [PORT_NUM-1:0]   bus_sel_from_0_fd   ;
 wire    [PORT_NUM-1:0]   bus_sel_from_1_fd   ;
+wire    [PORT_NUM-1:0]   bus_sel_from_2_fd   ;
+wire    [PORT_NUM-1:0]   bus_sel_from_3_fd   ;
 
 //-------------------
 
 wire    [PORT_NUM-1:0]   bus_sel_to_0_fifo   ;
 wire    [PORT_NUM-1:0]   bus_sel_to_1_fifo   ;
+wire    [PORT_NUM-1:0]   bus_sel_to_2_fifo   ;
+wire    [PORT_NUM-1:0]   bus_sel_to_3_fifo   ;
 
 //-------------------
 
@@ -115,6 +173,16 @@ bus_cross_bar #(.PORT_NUM(PORT_NUM)) BCB(
 .fifo_m_axis_1_tdata  (txd_m_axis_1_tdata ),
 .fifo_m_axis_1_tkeep  (txd_m_axis_1_tkeep ),
 .fifo_m_axis_1_tlast  (txd_m_axis_1_tlast ),
+.fifo_m_axis_2_tvalid (txd_m_axis_2_tvalid),
+.fifo_m_axis_2_tready (txd_m_axis_2_tready),
+.fifo_m_axis_2_tdata  (txd_m_axis_2_tdata ),
+.fifo_m_axis_2_tkeep  (txd_m_axis_2_tkeep ),
+.fifo_m_axis_2_tlast  (txd_m_axis_2_tlast ),
+.fifo_m_axis_3_tvalid (txd_m_axis_3_tvalid),
+.fifo_m_axis_3_tready (txd_m_axis_3_tready),
+.fifo_m_axis_3_tdata  (txd_m_axis_3_tdata ),
+.fifo_m_axis_3_tkeep  (txd_m_axis_3_tkeep ),
+.fifo_m_axis_3_tlast  (txd_m_axis_3_tlast ),
 
 //-------------------
 
@@ -129,11 +197,23 @@ bus_cross_bar #(.PORT_NUM(PORT_NUM)) BCB(
 .rx_s_axis_1_tdata  (fd_bar_axis_1_tdata ),
 .rx_s_axis_1_tkeep  (fd_bar_axis_1_tkeep ),
 .rx_s_axis_1_tlast  (fd_bar_axis_1_tlast ),
+.rx_s_axis_2_tvalid (fd_bar_axis_2_tvalid),
+.rx_s_axis_2_tready (fd_bar_axis_2_tready),
+.rx_s_axis_2_tdata  (fd_bar_axis_2_tdata ),
+.rx_s_axis_2_tkeep  (fd_bar_axis_2_tkeep ),
+.rx_s_axis_2_tlast  (fd_bar_axis_2_tlast ),
+.rx_s_axis_3_tvalid (fd_bar_axis_3_tvalid),
+.rx_s_axis_3_tready (fd_bar_axis_3_tready),
+.rx_s_axis_3_tdata  (fd_bar_axis_3_tdata ),
+.rx_s_axis_3_tkeep  (fd_bar_axis_3_tkeep ),
+.rx_s_axis_3_tlast  (fd_bar_axis_3_tlast ),
 
 //-------------------
 
 .fifo_sel_bits_0     (bus_sel_to_0_fifo),
-.fifo_sel_bits_1     (bus_sel_to_1_fifo) 
+.fifo_sel_bits_1     (bus_sel_to_1_fifo),
+.fifo_sel_bits_2     (bus_sel_to_2_fifo),
+.fifo_sel_bits_3     (bus_sel_to_3_fifo) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -158,7 +238,9 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_0 (
 .fd_bus_sel_bits  (bus_sel_from_0_fd),
  //                 ()
 .fifo_0_space_used (fifo_0_space_used ),
-.fifo_1_space_used (fifo_1_space_used ) 
+.fifo_1_space_used (fifo_1_space_used ),
+.fifo_2_space_used (fifo_2_space_used ),
+.fifo_3_space_used (fifo_3_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -182,7 +264,61 @@ frame_decoder #(.PORT_NUM(PORT_NUM)) FD_1 (
 .fd_bus_sel_bits  (bus_sel_from_1_fd),
  //                 ()
 .fifo_0_space_used (fifo_0_space_used ),
-.fifo_1_space_used (fifo_1_space_used ) 
+.fifo_1_space_used (fifo_1_space_used ),
+.fifo_2_space_used (fifo_2_space_used ),
+.fifo_3_space_used (fifo_3_space_used ) 
+
+//-------------------
+//*replace_last*,*with* *
+);
+frame_decoder #(.PORT_NUM(PORT_NUM)) FD_2 ( 
+.glb_clk     (glb_clk     ),
+.glb_areset_n(glb_areset_n),
+
+.fd_s_axis_tvalid ( rxd_s_axis_2_tvalid),
+.fd_s_axis_tready ( rxd_s_axis_2_tready),
+.fd_s_axis_tdata  ( rxd_s_axis_2_tdata ),
+.fd_s_axis_tkeep  ( rxd_s_axis_2_tkeep ),
+.fd_s_axis_tlast  ( rxd_s_axis_2_tlast ),
+//                  ()         
+.fd_m_axis_tvalid (fd_bar_axis_2_tvalid),
+.fd_m_axis_tready (fd_bar_axis_2_tready),
+.fd_m_axis_tdata  (fd_bar_axis_2_tdata ),
+.fd_m_axis_tkeep  (fd_bar_axis_2_tkeep ),
+.fd_m_axis_tlast  (fd_bar_axis_2_tlast ),
+ //                 ()
+.fd_bus_sel_bits  (bus_sel_from_2_fd),
+ //                 ()
+.fifo_0_space_used (fifo_0_space_used ),
+.fifo_1_space_used (fifo_1_space_used ),
+.fifo_2_space_used (fifo_2_space_used ),
+.fifo_3_space_used (fifo_3_space_used ) 
+
+//-------------------
+//*replace_last*,*with* *
+);
+frame_decoder #(.PORT_NUM(PORT_NUM)) FD_3 ( 
+.glb_clk     (glb_clk     ),
+.glb_areset_n(glb_areset_n),
+
+.fd_s_axis_tvalid ( rxd_s_axis_3_tvalid),
+.fd_s_axis_tready ( rxd_s_axis_3_tready),
+.fd_s_axis_tdata  ( rxd_s_axis_3_tdata ),
+.fd_s_axis_tkeep  ( rxd_s_axis_3_tkeep ),
+.fd_s_axis_tlast  ( rxd_s_axis_3_tlast ),
+//                  ()         
+.fd_m_axis_tvalid (fd_bar_axis_3_tvalid),
+.fd_m_axis_tready (fd_bar_axis_3_tready),
+.fd_m_axis_tdata  (fd_bar_axis_3_tdata ),
+.fd_m_axis_tkeep  (fd_bar_axis_3_tkeep ),
+.fd_m_axis_tlast  (fd_bar_axis_3_tlast ),
+ //                 ()
+.fd_bus_sel_bits  (bus_sel_from_3_fd),
+ //                 ()
+.fifo_0_space_used (fifo_0_space_used ),
+.fifo_1_space_used (fifo_1_space_used ),
+.fifo_2_space_used (fifo_2_space_used ),
+.fifo_3_space_used (fifo_3_space_used ) 
 
 //-------------------
 //*replace_last*,*with* *
@@ -194,12 +330,16 @@ bus_sel_bits_interconnect #(.PORT_NUM(PORT_NUM)) BSBIC(
 //fifo_port
 .fifo_0_bus_sel(bus_sel_to_0_fifo),
 .fifo_1_bus_sel(bus_sel_to_1_fifo),
+.fifo_2_bus_sel(bus_sel_to_2_fifo),
+.fifo_3_bus_sel(bus_sel_to_3_fifo),
 
 //-------------------
 
 //decoder port
 .fd_0_bus_sel(bus_sel_from_0_fd),
-.fd_1_bus_sel(bus_sel_from_1_fd) 
+.fd_1_bus_sel(bus_sel_from_1_fd),
+.fd_2_bus_sel(bus_sel_from_2_fd),
+.fd_3_bus_sel(bus_sel_from_3_fd) 
 
 //-------------------
 //*replace_last*,*with* *

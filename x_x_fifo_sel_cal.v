@@ -6,7 +6,7 @@ fifo_sel_bits,
 fifo_sel_res_final
 
 );
-parameter PORT_NUM=2;
+parameter PORT_NUM=4;
 input glb_areset_n;
 input glb_clk    ;
 
@@ -19,6 +19,8 @@ reg          [7:0]   fifo_sel_res ;
 
 parameter CHOOSE_FIFO_0=   8'd128+8'd_0;
 parameter CHOOSE_FIFO_1=   8'd128+8'd_1;
+parameter CHOOSE_FIFO_2=   8'd128+8'd_2;
+parameter CHOOSE_FIFO_3=   8'd128+8'd_3;
 
 //-------------------
 
@@ -33,6 +35,14 @@ begin
         else if(fifo_sel_bits[1])
         begin
             fifo_sel_res=CHOOSE_FIFO_1;
+        end
+        else if(fifo_sel_bits[2])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_2;
+        end
+        else if(fifo_sel_bits[3])
+        begin
+            fifo_sel_res=CHOOSE_FIFO_3;
         end
 
 //-------------------
