@@ -15,6 +15,8 @@ axis_out_10_tready,
 axis_out_11_tready,
 axis_out_12_tready,
 axis_out_13_tready,
+axis_out_14_tready,
+axis_out_15_tready,
 
 //-------------------
 axis_in_tready
@@ -36,6 +38,8 @@ output reg axis_out_10_tready;
 output reg axis_out_11_tready;
 output reg axis_out_12_tready;
 output reg axis_out_13_tready;
+output reg axis_out_14_tready;
+output reg axis_out_15_tready;
 
 //-------------------
 
@@ -55,6 +59,8 @@ parameter CHOOSE_FIFO_10   =8'd128+8'd_10;
 parameter CHOOSE_FIFO_11   =8'd128+8'd_11;
 parameter CHOOSE_FIFO_12   =8'd128+8'd_12;
 parameter CHOOSE_FIFO_13   =8'd128+8'd_13;
+parameter CHOOSE_FIFO_14   =8'd128+8'd_14;
+parameter CHOOSE_FIFO_15   =8'd128+8'd_15;
 
 //-------------------
 parameter NON_FIFO_CHOOSE=8'd0; 
@@ -78,6 +84,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -96,6 +104,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -114,6 +124,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -132,6 +144,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -150,6 +164,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -168,6 +184,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -186,6 +204,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -204,6 +224,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -222,6 +244,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -240,6 +264,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -258,6 +284,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -276,6 +304,8 @@ begin
                     axis_out_11_tready=axis_in_tready;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -294,6 +324,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=axis_in_tready;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end
@@ -312,6 +344,48 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=axis_in_tready;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
+
+//-------------------
+                    end
+            CHOOSE_FIFO_14:begin
+                    axis_out_0_tready=0;
+                    axis_out_1_tready=0;
+                    axis_out_2_tready=0;
+                    axis_out_3_tready=0;
+                    axis_out_4_tready=0;
+                    axis_out_5_tready=0;
+                    axis_out_6_tready=0;
+                    axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
+                    axis_out_10_tready=0;
+                    axis_out_11_tready=0;
+                    axis_out_12_tready=0;
+                    axis_out_13_tready=0;
+                    axis_out_14_tready=axis_in_tready;
+                    axis_out_15_tready=0;
+
+//-------------------
+                    end
+            CHOOSE_FIFO_15:begin
+                    axis_out_0_tready=0;
+                    axis_out_1_tready=0;
+                    axis_out_2_tready=0;
+                    axis_out_3_tready=0;
+                    axis_out_4_tready=0;
+                    axis_out_5_tready=0;
+                    axis_out_6_tready=0;
+                    axis_out_7_tready=0;
+                    axis_out_8_tready=0;
+                    axis_out_9_tready=0;
+                    axis_out_10_tready=0;
+                    axis_out_11_tready=0;
+                    axis_out_12_tready=0;
+                    axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=axis_in_tready;
 
 //-------------------
                     end
@@ -332,6 +406,8 @@ begin
                     axis_out_11_tready=0;
                     axis_out_12_tready=0;
                     axis_out_13_tready=0;
+                    axis_out_14_tready=0;
+                    axis_out_15_tready=0;
 
 //-------------------
                     end

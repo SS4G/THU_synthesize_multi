@@ -57,6 +57,14 @@ axis_in_13_tvalid ,
 axis_in_13_tdata  ,
 axis_in_13_tkeep  ,
 axis_in_13_tlast  ,
+axis_in_14_tvalid ,
+axis_in_14_tdata  ,
+axis_in_14_tkeep  ,
+axis_in_14_tlast  ,
+axis_in_15_tvalid ,
+axis_in_15_tdata  ,
+axis_in_15_tkeep  ,
+axis_in_15_tlast  ,
 
 //-------------------
 
@@ -124,6 +132,14 @@ input           axis_in_13_tvalid ;
 input  [31:0]   axis_in_13_tdata  ;
 input  [3:0]    axis_in_13_tkeep  ;
 input           axis_in_13_tlast  ;
+input           axis_in_14_tvalid ;
+input  [31:0]   axis_in_14_tdata  ;
+input  [3:0]    axis_in_14_tkeep  ;
+input           axis_in_14_tlast  ;
+input           axis_in_15_tvalid ;
+input  [31:0]   axis_in_15_tdata  ;
+input  [3:0]    axis_in_15_tkeep  ;
+input           axis_in_15_tlast  ;
 
 //-------------------
 
@@ -147,6 +163,8 @@ parameter CHOOSE_FIFO_10   =8'd128+8'd_10;
 parameter CHOOSE_FIFO_11   =8'd128+8'd_11;
 parameter CHOOSE_FIFO_12   =8'd128+8'd_12;
 parameter CHOOSE_FIFO_13   =8'd128+8'd_13;
+parameter CHOOSE_FIFO_14   =8'd128+8'd_14;
+parameter CHOOSE_FIFO_15   =8'd128+8'd_15;
 
 //-------------------
 
@@ -209,7 +227,15 @@ always @(bus_sel,
                 axis_in_13_tvalid,
                 axis_in_13_tdata,
                 axis_in_13_tkeep,
-                axis_in_13_tlast 
+                axis_in_13_tlast,
+                axis_in_14_tvalid,
+                axis_in_14_tdata,
+                axis_in_14_tkeep,
+                axis_in_14_tlast,
+                axis_in_15_tvalid,
+                axis_in_15_tdata,
+                axis_in_15_tkeep,
+                axis_in_15_tlast 
 
 //-------------------
                 //*replace_last*,*with* *
@@ -299,6 +325,18 @@ begin
                    axis_out_tkeep =axis_in_13_tkeep;
                    axis_out_tlast =axis_in_13_tlast;
                    axis_out_tdata =axis_in_13_tdata;
+                   end
+            CHOOSE_FIFO_14:begin
+                   axis_out_tvalid=axis_in_14_tvalid;
+                   axis_out_tkeep =axis_in_14_tkeep;
+                   axis_out_tlast =axis_in_14_tlast;
+                   axis_out_tdata =axis_in_14_tdata;
+                   end
+            CHOOSE_FIFO_15:begin
+                   axis_out_tvalid=axis_in_15_tvalid;
+                   axis_out_tkeep =axis_in_15_tkeep;
+                   axis_out_tlast =axis_in_15_tlast;
+                   axis_out_tdata =axis_in_15_tdata;
                    end
 
 //-------------------
